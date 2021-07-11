@@ -11,23 +11,26 @@ rl.on("line", function(line) {
 	input.push(line);
 	// rl.close();
 }).on("close", function() {
-	// let ask = input[0];
-	// console.log(ask.charCodeAt());
-	let count = Number(input[0])//2
-	hap = {}
-	for(let i = 1; i<count+1; i++){
-		hap += input[i].split(' ')//input[0],input[1]
+
+	// S = 문자열 예)abc
+	// R = 숫자 예)3
+	// P = 결과 예) aaabbbccc
+
+	let count = input[0];
+	// let P = ''
+	for(let i = 1; i<=count; i++){
+		let R = input[i].split(' ')[0];//3
+		let S = input[i].split(' ')[1];//abc
+		let P = ''
+		for(let j = 0; j<S.length; j++){
+			P = P + S[j].repeat(R)
+			// P += S.split('')[j].repeat(R)
+		}
+		console.log(P)
+		// P = ''
 	}
+
 	rl.close();
 
-	// console.log(hap)
-	// let ask = input[1];
-	// console.log(ask.split(' '))//3, ABC
-	
-	// hap = ''
-	// for(let i = 0; i<; i++){
-
-	// }
-	// hap += ask.split[1][i]
 	process.exit();
 });
